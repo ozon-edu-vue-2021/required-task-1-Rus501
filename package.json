@@ -25,14 +25,39 @@
         "reset.css": "2.0.2"
     },
     "devDependencies": {
+        "eslint": "^6.7.2",
+        "eslint-config-prettier": "^8.3.0",
         "husky": "2.4.0",
         "parcel-bundler": "1.12.3",
         "prettier": "1.17.1",
-        "pretty-quick": "1.11.0"
+        "pretty-quick": "1.11.0",
+        "stylelint": "^13.13.1",
+        "stylelint-config-standard": "^22.0.0"
     },
     "husky": {
         "hooks": {
             "pre-commit": "pretty-quick --pattern=\"src/**/*.*\""
         }
+    },
+    "eslintConfig": {
+        "root": true,
+        "env": {
+            "node": true,
+            "browser": true
+        },
+        "extends": [
+            "eslint:recommended",
+            "prettier"
+        ],
+        "parserOptions": {
+            "parser": "babel-eslint",
+            "ecmaVersion": 6
+        },
+        "rules": {
+            "no-var": "error"
+        }
+    },
+    "stylelint": {
+        "extends": "stylelint-config-standard"
     }
 }
